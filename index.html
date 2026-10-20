@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d14">
+  <title>Rivals: Arena 3D</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js'"></script>
+  <script src="assets/game.js" defer></script>
+</head>
+<body>
+  <main class="game-app">
+    <div class="world" id="world"></div>
+
+    <header class="top-hud">
+      <a class="logo" href="index.html"><span class="logo-mark">R</span><span>ARENA <b>3D</b></span></a>
+      <div class="match-state"><i></i><span id="matchMessage">READY TO DEPLOY</span></div>
+      <div class="top-stats"><div><small>WAVE</small><b id="wave">01</b></div><div><small>KOs</small><b id="kos">00</b></div><div><small>TIME</small><b id="timer">00:00</b></div></div>
+    </header>
+
+    <div class="crosshair" aria-hidden="true"><i></i><b></b><i></i></div>
+
+    <section class="bottom-hud" aria-label="Combat HUD">
+      <div class="health-box"><span>HEALTH</span><strong><b id="health">100</b><small> / 100</small></strong><div class="health-track"><i id="healthBar"></i></div></div>
+      <div class="weapon-strip" id="weaponStrip" aria-label="Choose a weapon">
+        <button class="weapon-card selected" data-weapon="0"><kbd>1</kbd><span class="weapon-icon rifle-icon"></span><b>RIFLE</b></button>
+        <button class="weapon-card" data-weapon="1"><kbd>2</kbd><span class="weapon-icon shotgun-icon"></span><b>SHOTGUN</b></button>
+        <button class="weapon-card" data-weapon="2"><kbd>3</kbd><span class="weapon-icon sniper-icon"></span><b>SNIPER</b></button>
+        <button class="weapon-card" data-weapon="3"><kbd>4</kbd><span class="weapon-icon pistol-icon"></span><b>PISTOL</b></button>
+      </div>
+      <div class="ammo-box"><span id="weaponName">AR-9 RIFLE</span><strong><b id="ammo">30</b><small> / <span id="reserve">90</span></small></strong><button id="reloadButton" type="button">R RELOAD</button></div>
+    </section>
+
+    <div class="damage-flash" id="damageFlash"></div>
+    <div class="center-message" id="centerMessage" hidden></div>
+
+    <section class="overlay" id="overlay">
+      <div class="menu-card">
+        <p class="eyebrow">FAN-MADE 3D BROWSER SHOOTER</p>
+        <h1 id="menuTitle">ENTER THE <span>ARENA</span></h1>
+        <p id="menuText">Fight waves of bots in a 3D arena. Choose your loadout, keep moving, and see how many KOs you can earn.</p>
+        <button class="start-button" id="startButton" type="button">DEPLOY <span>→</span></button>
+        <div class="controls-grid">
+          <div><kbd>W A S D</kbd><span>Move</span></div><div><kbd>MOUSE</kbd><span>Aim</span></div><div><kbd>CLICK</kbd><span>Fire</span></div><div><kbd>1–4</kbd><span>Weapons</span></div><div><kbd>R</kbd><span>Reload</span></div><div><kbd>ESC</kbd><span>Pause</span></div>
+        </div>
+        <p class="fine-print">Unofficial fan-made browser game. No Roblox login or official game assets. Internet is needed to load the 3D engine.</p>
+      </div>
+    </section>
+
+    <div class="error-message" id="errorMessage" hidden></div>
+  </main>
+</body>
+</html>
